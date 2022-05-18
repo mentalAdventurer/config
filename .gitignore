@@ -1,0 +1,10 @@
+*
+!ranger/
+!fish/
+!alacritty/
+!dunst/
+!mpv/
+!i3/
+!picom/
+!zathura/
+!.gitignore
