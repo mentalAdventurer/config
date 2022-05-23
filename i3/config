@@ -31,7 +31,7 @@
 #
     #smart_gaps on
     gaps inner 10
-    for_window [class="^.*"] border pixel 0 
+    for_window [class="^.*"] border pixel 2 
 
 
 #
