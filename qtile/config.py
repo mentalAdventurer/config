@@ -83,6 +83,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "c", lazy.spawn("clipmenu"),desc="launch clipmenu"),
     Key([mod], 'd', lazy.run_extension(extension.DmenuRun(
             font="TerminessTTF Nerd Font",
             fontsize="13",
