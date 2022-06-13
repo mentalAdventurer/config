@@ -7,6 +7,7 @@ from libqtile.widget.windowname import WindowName
 from libqtile.widget.cpu import CPU
 from libqtile.widget.memory import Memory
 from libqtile.widget.net import Net
+from libqtile.widget.wlan import Wlan
 from libqtile.widget.systray import Systray
 from libqtile.widget.clock import Clock
 from libqtile.widget.pulse_volume import PulseVolume
@@ -87,8 +88,15 @@ bar = Bar([
     Spacer(length=10),
 
     left_half_circle(gruvbox['dark-blue']),
+    Wlan(
+        background=gruvbox['dark-blue'],
+        interface="wlp0s20f3",
+        format='{essid} {percent:2.0%}'
+    ),
+
     Net(
-        background=gruvbox['dark-blue']
+        background=gruvbox['dark-blue'],
+        format="{down} ↓↑ {up}",
     ),
     right_half_circle(gruvbox['dark-blue']),
 
