@@ -1,7 +1,7 @@
 import os
 import subprocess
 from libqtile import bar, layout, widget, extension
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, KeyChord
 from libqtile.lazy import lazy
 from libqtile import hook
 from libqtile.utils import guess_terminal
@@ -13,33 +13,40 @@ mod = "mod4"
 terminal = guess_terminal()
 
 keys = [
-    # A list of available commands that can be bound to keys can be found
-    # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
     Key([mod], "j", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "odiaeresis", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "k", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "l", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
+
+    # Move Windows
     Key([mod, "shift"], "j", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "odiaeresis", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_up(), desc="Move window up"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    Key([mod, "control"], "j", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "odiaeresis", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "k", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "l", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod, "mod1"], "j", lazy.layout.flip_left()),
     Key([mod, "mod1"], "odiaeresis", lazy.layout.flip_right()),
     Key([mod, "mod1"], "k", lazy.layout.flip_down()),
     Key([mod, "mod1"], "l", lazy.layout.flip_up()),
-    Key([mod, "shift"], "n", lazy.layout.normalize()),
-    Key([mod], "i", lazy.layout.grow()),
-    Key([mod], "m", lazy.layout.shrink()),
+
+    # Resize
+    Key([mod, "control"], "j", 
+        lazy.layout.grow_left().when(layout="bsp"), 
+        lazy.layout.shrink_main().when(layout="monadtall"),
+        desc="Grow window to the left"),
+    Key([mod, "control"], "odiaeresis",
+        lazy.layout.grow_right().when(layout="bsp"), 
+        lazy.layout.grow_main().when(layout="monadtall"),
+        desc="Grow window to the right"),
+    Key([mod, "control"], "k", 
+        lazy.layout.grow_down().when(layout="bsp"), 
+        lazy.layout.grow().when(layout="monadtall"),
+        desc="Grow window down"),
+    Key([mod, "control"], "l", 
+        lazy.layout.grow_up().when(layout="bsp"), 
+        lazy.layout.shrink().when(layout="monadtall"),
+        desc="Grow window up"),
+    Key([mod, "control"], "n", lazy.layout.normalize()),
 
     # Toggle floating and fullscreen
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
@@ -66,17 +73,16 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key(
-        [mod, "shift"],
-        "Return",
+        [mod],
+        "e",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "control"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], 'd', lazy.run_extension(extension.DmenuRun(
             font="TerminessTTF Nerd Font",
             fontsize="13",
