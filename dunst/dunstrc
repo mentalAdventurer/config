@@ -34,7 +34,7 @@
     origin = top-center
 
     # Offset from the origin
-    offset = 0x20
+    offset = 0x40
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -293,17 +293,17 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#363d3e"
-    foreground = "#888888"
-    highlight = "#285577"
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight = "#458588"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#363d3e"
-    foreground = "#ffffff"
-    highlight = "#285577"
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight = "#458588"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
