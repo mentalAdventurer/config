@@ -96,7 +96,7 @@
     bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-    bindsym $mod+d exec --no-startup-id dmenu_run -nb '#000000'
+    bindsym $mod+d exec --no-startup-id dmenu_run -l 15 -nb '#000000'
 
 # start Passwordmanager
     bindsym $mod+p exec --no-startup-id bitwarden-desktop
@@ -123,7 +123,7 @@
     bindsym $mod+g exec --no-startup-id gnome-calendar
 
 # xrandr
-    bindsym $mod+Shift+BackSpace exec --no-startup-id xrandr --auto
+    bindsym $mod+Shift+BackSpace exec --no-startup-id dmenu_screen
 
 
 #
