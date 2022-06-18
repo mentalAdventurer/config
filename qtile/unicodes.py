@@ -3,7 +3,7 @@ from libqtile.widget.textbox import TextBox
 
 def left_half_circle(fg_color):
     return TextBox(
-        text='\uE0B6',
+        text=' \uE0B6',
         fontsize=28,
         foreground=fg_color,
         padding=0)
@@ -11,8 +11,8 @@ def left_half_circle(fg_color):
 
 def right_half_circle(fg_color):
     return TextBox(
-        text='\uE0B4',
-        fontsize=28,
+        text=' \uE0B4 ',
+        fontsize=25,
         foreground=fg_color,
         padding=0)
 

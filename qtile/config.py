@@ -8,7 +8,6 @@ from libqtile.utils import guess_terminal
 
 from colors import gruvbox
 from bar_transparent_rounded import bar
-
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -18,6 +17,9 @@ keys = [
     Key([mod], "odiaeresis", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "k", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "l", lazy.layout.up(), desc="Move focus up"),
+    Key([mod], "h", lazy.group.prev_window(), desc="Move to prev Window"),
+    Key([mod], "adiaeresis", lazy.group.next_window(), desc="Move to next Window"),
+    Key([mod], "space",lazy.next_screen()),
 
     # Move Windows
     Key([mod, "shift"], "j", lazy.layout.shuffle_left(), desc="Move window to the left"),
@@ -52,8 +54,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen mode"),
     Key([mod, "shift"], "space", lazy.window.toggle_floating(), desc="Toggle floating"),
 
-    Key([mod, "shift"], "BackSpace", lazy.spawn("xrandr --auto"), desc="Toggle floating"),
-    Key([mod, "control"], "BackSpace", lazy.spawn("xrandr --output eDP1 --off"), desc="Toggle floating"),
+    Key([mod, "shift"], "BackSpace", lazy.spawn("dmenu_screen"), desc="Toggle floating"),
     Key([mod], "z", lazy.spawn("loginctl lock-session"), desc="Toggle floating"),
 
     # Functionkeys
@@ -99,15 +100,15 @@ keys = [
 ]
 
 groups = [
-    Group('1', label="一", layout="monadtall"),
-    Group('2', label="二", layout="bsp"),
-    Group('3', label="三", layout="bsp"),
-    Group('4', label="四", layout="bsp"),
-    Group('5', label="五", layout="bsp"),
-    Group('6', label="六", layout="bsp"),
-    Group('7', label="七", layout="bsp"),
-    Group('8', label="八", layout="bsp"),
-    Group('9', label="九", layout="max"),
+    Group('1', label="α", layout="monadtall"),
+    Group('2', label="β", layout="bsp"),
+    Group('3', label="γ", layout="bsp"),
+    Group('4', label="δ", layout="bsp"),
+    Group('5', label="ε", layout="bsp"),
+    Group('6', label="δ", layout="bsp"),
+    Group('7', label="η", layout="bsp"),
+    Group('8', label="λ", layout="bsp"),
+    Group('9', label="π", layout="max"),
 ]
 
 for i in groups:
@@ -118,6 +119,7 @@ for i in groups:
                 [mod],
                 i.name,
                 lazy.group[i.name].toscreen(),
+
                 desc="Switch to group {}".format(i.name),
             ),
             # mod1 + shift + letter of group = switch to & move focused window to group
@@ -136,7 +138,8 @@ for i in groups:
 
 # Append scratchpad with dropdowns to groups
 groups.append(ScratchPad('scratchpad', [
-    DropDown('term', 'alacritty', width=0.4, height=0.5, x=0.3, y=0.1, opacity=1),
+    DropDown('term', 'alacritty',
+             width=0.586, height=0.624, x=0.2075, y=0.15, opacity=1),
     DropDown('mixer', 'pavucontrol', width=0.4,
              height=0.6, x=0.3, y=0.1, opacity=1),
     DropDown('bitwarden', 'bitwarden-desktop',
@@ -156,13 +159,13 @@ keys.extend([
 ])
 
 layouts = [
-    layout.Bsp(lower_right=True,margin=5,fair=False),
-    layout.MonadTall(ratio=0.68,margin=4,max_ration=1,min_ration=0,single_border_width=0),
-    layout.Max(),
+    layout.Bsp(lower_right=True,margin=7,fair=False),
+    layout.MonadTall(ratio=0.68,margin=7,max_ration=1,min_ration=0,single_border_width=0),
+    layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=2),
 ]
 
 widget_defaults = dict(
-    font='TerminessTTF Nerd Font',
+    font='JetBrainsMonoMedium Nerd Font Medium',
     fontsize=14,
     padding=3,
 )
@@ -171,14 +174,26 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=bar,
+        wallpaper="~/Pictures/Wallpaper/Wallpapers-ManuNarula/wallhaven-q2j97l_1920x1080.png",
+        wallpaper_mode="fill"
+    ),
+    Screen(
         wallpaper="~/Pictures/Wallpaper/wp5071587.jpg",
         wallpaper_mode="fill"
     ),
+
+]
+
+# Drag floating layouts.
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = False
+follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(

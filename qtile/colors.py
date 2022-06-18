@@ -15,4 +15,5 @@ gruvbox = {
     'cyan':         '#8ec07c',
     'dark-gray':    '#3d3d3d',
     'gray':         '#666666',
+    'greyish teal': '#83A598',
 }
