@@ -138,15 +138,17 @@ for i in groups:
 
 # Append scratchpad with dropdowns to groups
 groups.append(ScratchPad('scratchpad', [
-    DropDown('term', 'alacritty',
+    DropDown('term', 'kitty',
              width=0.586, height=0.624, x=0.2075, y=0.15, opacity=1),
     DropDown('mixer', 'pavucontrol', width=0.4,
              height=0.6, x=0.3, y=0.1, opacity=1),
     DropDown('bitwarden', 'bitwarden-desktop',
              width=0.5, height=0.55, x=0.25, y=0.2, opacity=1),
-    DropDown('notetaker', 'alacritty -e fish -c notetaker_qtile',
+    DropDown('notetaker', 'kitty fish -c notetaker_qtile',
              width=0.586, height=0.624, x=0.2075, y=0.15, opacity=1),
     DropDown('calendar', 'gnome-calendar',
+             width=0.586, height=0.624, x=0.2075, y=0.15, opacity=1),
+    DropDown('ranger', 'kitty ranger', 
              width=0.586, height=0.624, x=0.2075, y=0.15, opacity=1),
 ]))
 # extend keys list with keybinding for scratchpad
@@ -156,6 +158,7 @@ keys.extend([
     Key([mod], "p", lazy.group['scratchpad'].dropdown_toggle('bitwarden')),
     Key([mod], "n", lazy.group['scratchpad'].dropdown_toggle('notetaker')),
     Key([mod], "g", lazy.group['scratchpad'].dropdown_toggle('calendar')),
+    Key([mod], "r", lazy.group['scratchpad'].dropdown_toggle('ranger')),
 ])
 
 layouts = [
