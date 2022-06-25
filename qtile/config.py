@@ -164,7 +164,7 @@ keys.extend([
 layouts = [
     layout.Bsp(lower_right=True,margin=7,fair=False),
     layout.MonadTall(ratio=0.68,margin=7,max_ration=1,min_ration=0,single_border_width=0),
-    layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=2),
+    layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=0),
 ]
 
 widget_defaults = dict(
@@ -177,11 +177,11 @@ extension_defaults = widget_defaults.copy()
 screens = [
     Screen(
         top=bar,
-        wallpaper="~/Pictures/Wallpaper/Wallpapers-ManuNarula/wallhaven-q2j97l_1920x1080.png",
+        wallpaper="~/.config/qtile/img/wallpaper1.jpg",
         wallpaper_mode="fill"
     ),
     Screen(
-        wallpaper="~/Pictures/Wallpaper/wp5071587.jpg",
+        wallpaper="~/.config/qtile/img/wallpaper2.jpg",
         wallpaper_mode="fill"
     ),
 
@@ -201,7 +201,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
     border_normal=gruvbox['dark-gray'],
-    border_focus=gruvbox['dark-red'],
+    border_focus=gruvbox['dark-blue'],
     border_width=3,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
