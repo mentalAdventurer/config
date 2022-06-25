@@ -4,12 +4,12 @@ from libqtile import bar, layout, widget, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown, KeyChord
 from libqtile.lazy import lazy
 from libqtile import hook
-from libqtile.utils import guess_terminal
 
 from colors import gruvbox
 from bar_transparent_rounded import bar
+
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "kitty" 
 
 keys = [
     # Switch between windows
