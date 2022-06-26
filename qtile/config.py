@@ -26,8 +26,13 @@ keys = [
     Key([mod, "shift"], "odiaeresis", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_up(), desc="Move window up"),
-    Key([mod, "mod1"], "j", lazy.layout.flip_left()),
-    Key([mod, "mod1"], "odiaeresis", lazy.layout.flip_right()),
+
+    Key([mod, "mod1"], "j", 
+        lazy.layout.flip_left(),
+        lazy.layout.swap_column_left().when(layout="columns")),
+    Key([mod, "mod1"], "odiaeresis", 
+        lazy.layout.flip_right(),
+        lazy.layout.swap_column_right().when(layout="columns")),
     Key([mod, "mod1"], "k", lazy.layout.flip_down()),
     Key([mod, "mod1"], "l", lazy.layout.flip_up()),
 
@@ -108,7 +113,7 @@ groups = [
     Group('6', label="δ", layout="bsp"),
     Group('7', label="η", layout="bsp"),
     Group('8', label="λ", layout="bsp"),
-    Group('9', label="π", layout="max"),
+    Group('9', label="π", layout="columns"),
 ]
 
 for i in groups:
@@ -164,7 +169,8 @@ keys.extend([
 layouts = [
     layout.Bsp(lower_right=True,margin=7,fair=False),
     layout.MonadTall(ratio=0.68,margin=7,max_ration=1,min_ration=0,single_border_width=0),
-    layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=0),
+    layout.Columns(margin=7),
+    #layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=0),
 ]
 
 widget_defaults = dict(
