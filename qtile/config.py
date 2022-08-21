@@ -38,19 +38,19 @@ keys = [
 
     # Resize
     Key([mod, "control"], "j", 
-        lazy.layout.grow_left().when(layout="bsp"), 
+        lazy.layout.grow_left(), 
         lazy.layout.shrink_main().when(layout="monadtall"),
         desc="Grow window to the left"),
     Key([mod, "control"], "odiaeresis",
-        lazy.layout.grow_right().when(layout="bsp"), 
+        lazy.layout.grow_right(), 
         lazy.layout.grow_main().when(layout="monadtall"),
         desc="Grow window to the right"),
     Key([mod, "control"], "k", 
-        lazy.layout.grow_down().when(layout="bsp"), 
+        lazy.layout.grow_down(), 
         lazy.layout.grow().when(layout="monadtall"),
         desc="Grow window down"),
     Key([mod, "control"], "l", 
-        lazy.layout.grow_up().when(layout="bsp"), 
+        lazy.layout.grow_up(), 
         lazy.layout.shrink().when(layout="monadtall"),
         desc="Grow window up"),
     Key([mod, "control"], "n", lazy.layout.normalize()),
@@ -106,13 +106,13 @@ keys = [
 
 groups = [
     Group('1', label="α", layout="monadtall"),
-    Group('2', label="β", layout="bsp"),
-    Group('3', label="γ", layout="bsp"),
-    Group('4', label="δ", layout="bsp"),
-    Group('5', label="ε", layout="bsp"),
-    Group('6', label="δ", layout="bsp"),
-    Group('7', label="η", layout="bsp"),
-    Group('8', label="λ", layout="bsp"),
+    Group('2', label="β", layout="columns"),
+    Group('3', label="γ", layout="columns"),
+    Group('4', label="δ", layout="columns"),
+    Group('5', label="ε", layout="columns"),
+    Group('6', label="δ", layout="columns"),
+    Group('7', label="η", layout="columns"),
+    Group('8', label="λ", layout="columns"),
     Group('9', label="π", layout="columns"),
 ]
 
@@ -167,10 +167,10 @@ keys.extend([
 ])
 
 layouts = [
-    layout.Bsp(lower_right=True,margin=7,fair=False),
+    layout.Columns(margin=10,margin_on_single=35, insert_position=1),
     layout.MonadTall(ratio=0.68,margin=7,max_ration=1,min_ration=0,single_border_width=0),
-    layout.Columns(margin=7),
-    #layout.Stack(num_stacks=1, margin=7, border_focus="#881111",border_width=0),
+    #layout.Stack(num_stacks=2, margin=7, border_focus="#881111",border_width=0),
+    #layout.Bsp(lower_right=True,margin=7,margin_on_single=35,fair=False),
 ]
 
 widget_defaults = dict(
