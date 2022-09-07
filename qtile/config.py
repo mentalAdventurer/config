@@ -187,7 +187,7 @@ screens = [
         wallpaper_mode="fill"
     ),
     Screen(
-        wallpaper="~/.config/qtile/img/wallpaper2.jpg",
+        wallpaper="~/.config/qtile/img/wallpaper1.jpg",
         wallpaper_mode="fill"
     ),
 
