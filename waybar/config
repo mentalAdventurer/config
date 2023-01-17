@@ -1,0 +1,150 @@
+{
+  "layer": "top",
+  "position": "top", 
+  "height": 25,
+  
+  "modules-left":   ["wlr/workspaces","custom/pomo"],
+  "modules-center": ["clock", "custom/dunst"],
+  "modules-right":  ["tray", "idle_inhibitor", "network", "backlight", "pulseaudio","battery"],
+
+  "wlr/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "on-click": "activate",
+    //"format": "{icon}",
+    /*"persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    },*/
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "default": "",
+      "active": ""
+    }
+  },
+
+"idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": "﯈"
+        }
+},
+
+"custom/dunst": {
+    "exec": "~/.config/waybar/scripts/notifications",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+},
+
+"custom/pomo":{
+    "restart-interval": 1,
+    "return-type":"json",
+    "exec": "~/.config/waybar/scripts/pomo",
+    "format": "{}"
+},
+
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+       "Alacritty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
+},
+
+"mpris": {
+	"format": "DEFAULT: {player_icon} {dynamic}",
+	"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	// "ignored-players": ["firefox"]
+},
+
+  "custom/updates": {
+    "exec": "(checkupdates ; yay -Qua) | wc -l",
+    "interval": 18000,
+    "format": " {}"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "backlight":{
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["","",""],
+    "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
+    "min-length": 6 
+  },
+  "battery": {
+    "on-click":"notify-send nothing",
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+  },
+  "clock": {
+   "format": "{: %R   %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-wifi": "直 {essid}",
+    "format-ethernet": " {essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "on-click": "~/.config/waybar/scripts/applets start",
+    "on-click-right": "~/.config/waybar/scripts/applets end"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ Muted",
+    "on-click": "~/.config/waybar/scripts/volume mute",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "墳", ""]
+    }
+  }
+}

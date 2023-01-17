@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check the value of the parameter
+if [ "$1" == "end" ]; then
+  # Kill the process if the parameter is "end"
+  pgrep blueman-applet > /dev/null && killall blueman-applet
+  pgrep nm-applet > /dev/null && killall nm-applet
+elif [ "$1" == "start" ]; then
+  # Check if the process is already running
+  pgrep blueman-applet > /dev/null || blueman-applet &
+  pgrep np-applet > /dev/null || nm-applet --indicator &
+else
+  # Print an error message if the parameter is not "end" or "start"
+  echo "Invalid parameter. Please specify either 'end' or 'start'."
+fi

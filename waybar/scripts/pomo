@@ -1,0 +1,34 @@
+#!/bin/bash
+
+status_output=$(pomo status)
+
+# Get the first letter of the output
+first_letter=${status_output:0:1}
+
+# Set the text variable based on the first letter
+if [[ $first_letter == "?" ]]; then
+  text=""
+elif [[ $first_letter == "R" ]]; then
+  icon=""
+  text=${status_output/${status_output:0:1}/$icon}
+elif [[ $first_letter == "P" ]]; then
+  icon=""
+  text=${status_output/${status_output:0:1}/$icon}
+fi
+
+# Set the class variable based on the first letter
+if [[ $first_letter == "R" ]]; then
+  class="active"
+elif [[ $first_letter == "P" ]]; then
+  class="inactive"
+else
+  class=""
+fi
+
+# Set the other variables
+alt="Time left"
+tooltip="Time left"
+percentage="100"
+
+# Output the JSON string
+echo "{\"text\": \"$text\", \"alt\": \"$alt\", \"tooltip\": \"$tooltip\", \"class\": \"$class\", \"percentage\": $percentage }"
