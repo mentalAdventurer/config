@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top", 
-  "height": 25,
+  "height": 36,
   
   "modules-left":   ["wlr/workspaces","custom/pomo"],
   "modules-center": ["clock", "custom/dunst"],
@@ -43,8 +43,8 @@
 "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-        "activated": "",
-        "deactivated": "﯈"
+        "activated": "󰅶",
+        "deactivated": "󰛊"
         }
 },
 
@@ -124,13 +124,14 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "network": {
-    "format-wifi": "直 {essid}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": " {essid}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "睊 Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "~/.config/waybar/scripts/applets start",
-    "on-click-right": "~/.config/waybar/scripts/applets end"
+    "on-click-right": "~/.config/waybar/scripts/applets end",
+    "format-icons": ["󰤯","󰤟","󰤟","󰤢","󰤥","󰤨"]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
