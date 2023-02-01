@@ -21,7 +21,7 @@ elif [ "$mode" == "${mode_options[1]}" ]; then
         fi
     done
 
-    hyprctl keyword monitor "${monitor_names[0]}",disable
+    [ -z "$selected_monitor" ] || hyprctl keyword monitor "${monitor_names[0]}",disable
 
 elif [ "$mode" == "${mode_options[2]}" ]; then 
 
@@ -29,7 +29,7 @@ elif [ "$mode" == "${mode_options[2]}" ]; then
     selected_monitor=$(printf "%s\n" "${monitor_names[@]}" | rofi -dmenu -i -p "Main Monitor: ")
 
     for i in $(seq 1 5); do
-        hyprctl dispatch moveworkspacetomonitor "$i" "$selected_monitor"
+        [ -z "$selected_monitor" ] || hyprctl dispatch moveworkspacetomonitor "$i" "$selected_monitor"
     done
 
     # delete chosen Display from array
@@ -41,14 +41,12 @@ elif [ "$mode" == "${mode_options[2]}" ]; then
     done
 
     for i in $(seq 6 10); do
-        hyprctl dispatch moveworkspacetomonitor "$i" "${monitor_names[0]}"
+        [ -z "$selected_monitor" ] || hyprctl dispatch moveworkspacetomonitor "$i" "${monitor_names[0]}"
     done
 
 elif [ "$mode" == "${mode_options[3]}" ]; then
     selected_main=$(printf "%s\n" "${monitor_names[@]}" | rofi -dmenu -i -p "Select Monitor: ")
     selected_mirror=$(printf "%s\n" "${monitor_names[@]}" | rofi -dmenu -i -p "Select Monitor to Mirror: ")
-    echo $selected_main
-    echo $selected_mirror
     hyprctl keyword monitor $selected_main,prefered,auto,1,mirror,$selected_mirror
 
 elif [ "$mode" == "${mode_options[4]}" ]; then
