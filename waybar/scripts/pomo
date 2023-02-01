@@ -11,7 +11,7 @@ if [[ $first_letter == "?" ]]; then
 elif [[ $first_letter == "R" ]]; then
   icon=""
   text=${status_output/${status_output:0:1}/$icon}
-elif [[ $first_letter == "P" ]]; then
+elif [[ $first_letter == "P" || $first_letter == "B" ]]; then
   icon=""
   text=${status_output/${status_output:0:1}/$icon}
 fi
@@ -19,10 +19,10 @@ fi
 # Set the class variable based on the first letter
 if [[ $first_letter == "R" ]]; then
   class="active"
-elif [[ $first_letter == "P" ]]; then
+elif [[ $first_letter == "B" || $first_letter == "P" ]]; then
   class="inactive"
 else
-  class=""
+  class="inactive"
 fi
 
 # Set the other variables
