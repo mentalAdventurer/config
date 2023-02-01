@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
+  font-family: Symbols Nerd Font, JetBrainsMono Nerd Font; 
   font-weight: bold;
   font-size: 14px;
   min-height: 0;
@@ -88,7 +88,7 @@ tooltip {
   background: #000000;
   border-radius: 10px;
   padding-right: 0px;
-  padding-left: 5px;
+  padding-left: 2px;
   margin-left: 5px;
 }
 
