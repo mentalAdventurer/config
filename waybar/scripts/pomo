@@ -9,10 +9,13 @@ first_letter=${status_output:0:1}
 if [[ $first_letter == "?" ]]; then
   text=""
 elif [[ $first_letter == "R" ]]; then
-  icon=""
+  icon=""
   text=${status_output/${status_output:0:1}/$icon}
-elif [[ $first_letter == "P" || $first_letter == "B" ]]; then
-  icon=""
+elif [[ $first_letter == "P" ]]; then
+  icon=""
+  text=${status_output/${status_output:0:1}/$icon}
+elif [[ $first_letter == "B" ]]; then
+  icon=""
   text=${status_output/${status_output:0:1}/$icon}
 fi
 

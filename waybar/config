@@ -101,21 +101,21 @@
   "backlight":{
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["","",""],
+    "format-icons": ["󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
     "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
     "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
     "min-length": 6 
   },
   "battery": {
-    "on-click":"notify-send nothing",
+    "on-click":"gnome-power-statistics",
     "states": {
       "good": 95,
       "warning": 30,
       "critical": 20
     },
     "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
