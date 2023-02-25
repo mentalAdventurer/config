@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-swaylock \
---screenshots \
---indicator \
---clock \
---effect-vignette 0.2:0.2 &
+swaylock -F -i "~/.config/hypr/wallpaper/MinimalismMountains.png"
+#swaylock \
+#--screenshots \
+#--indicator \
+#--clock \
+#--effect-vignette 0.2:0.2 &
