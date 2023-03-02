@@ -1,0 +1,5 @@
+# Alias
+alias ls='exa --color=auto'
+alias ll='exa -l --icons --git'
+alias la='exa -la --icons --git'
+alias lt='exa --tree --level=2 --icons --git'
