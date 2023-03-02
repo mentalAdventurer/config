@@ -107,7 +107,7 @@
     "min-length": 6 
   },
   "battery": {
-    "on-click":"gnome-power-statistics",
+    "interval": 3,
     "states": {
       "good": 95,
       "warning": 30,
@@ -116,7 +116,7 @@
     "format": "{icon} {capacity}%",
     "format-charging": "󱐋 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
-    "format-alt": "{time} {icon}",
+    "format-alt": "{icon} {power:.1f} W",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "clock": {
