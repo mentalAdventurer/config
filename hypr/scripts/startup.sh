@@ -9,6 +9,7 @@ if [ ! -v wrapperhl ]; then
     export XDG_CONFIG_HOME=$HOME/.config
     export XDG_CACHE_HOME=$HOME/.cache
     export XDG_DATA_HOME=$HOME/.local/share
+    export ZDOTDIR=$HOME/.config/zsh
     export _JAVA_AWT_WM_NONREPARENTING=1
     export XCURSOR_SIZE=24
 fi
