@@ -30,7 +30,8 @@ if [[ "$1" == "nvidia" ]]; then
     export WLR_NO_HARDWARE_CURSORS=1
     echo "Start with Nvidia-Card"
 else 
-    export WLR_NO_HARDWARE_CURSORS=1
+    echo "Start without Nvidia-Card"
+    #export WLR_NO_HARDWARE_CURSORS=1
     export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json # disabel all nvidia 
 fi
 
