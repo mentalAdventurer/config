@@ -22,6 +22,7 @@ elif [ "$mode" == "${mode_options[1]}" ]; then
     done
 
     [ -z "$selected_monitor" ] || hyprctl keyword monitor "${monitor_names[0]}",disable
+    [ -z "$selected_monitor" ] || hyprctl keyword monitor "$selected_monitor",prefered,0x0,1
 
 elif [ "$mode" == "${mode_options[2]}" ]; then 
 
