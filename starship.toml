@@ -1,0 +1,18 @@
+add_newline = true
+
+[directory]
+read_only = ''
+home_symbol = ' ~'
+truncation_length = 4
+
+[python]
+symbol = " " 
+
+
+[[battery.display]]
+threshold = 25
+style = 'bold red'
+
+[[battery.display]]
+threshold = 45
+style = 'bold yellow'
