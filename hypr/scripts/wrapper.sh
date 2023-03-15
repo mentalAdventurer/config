@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+echo "Starting Hyprland over Wrapper is depricated"
 export wrapperhl=true
 
 export PATH=$PATH:/home/fabian/.local/bin
