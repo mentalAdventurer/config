@@ -1,12 +1,12 @@
 # Functions
 fcd() { 
-    cd "$( fd $1 -t d | fzf )"
+    z "$( fd -t d . $1 | fzf )"
 }
 
 fopen(){
     if [[ -z $1 ]]; then
         fd -L  --print0 | fzf --read0 | xargs -0 xdg-open
     else
-        fd -L -e "$1" --print0 | fzf --read0 | xargs -0 xdg-open
+        fd -L -e "$1" --print0 | fzf --read0 | xargs -0 xdg-open 
     fi
 }

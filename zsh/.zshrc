@@ -2,10 +2,17 @@
 autoload -U colors && colors
 PROMPT=" %{$fg[green]%}% %~ %{$reset_color%}  "
 
+# Path
+export PATH=$PATH:/home/fabian/.local/bin
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
 # Sources
 source $HOME/.config/zsh/alias
 source $HOME/.config/zsh/functions
 source $HOME/.config/zsh/plugins
+source $HOME/.config/zsh/zoxide
 
 # History in cache directory
 HISTSIZE=10000000
