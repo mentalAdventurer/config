@@ -9,10 +9,10 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
 # Sources
-source $HOME/.config/zsh/alias
 source $HOME/.config/zsh/functions
 source $HOME/.config/zsh/plugins
 source $HOME/.config/zsh/zoxide
+source $HOME/.config/zsh/alias
 
 # History in cache directory
 HISTSIZE=10000000
