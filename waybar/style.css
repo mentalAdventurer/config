@@ -1,26 +1,28 @@
+@import "./colors.css";
+
 * {
   border: none;
   border-radius: 0;
   font-family: Symbols Nerd Font, JetBrainsMono Nerd Font; 
   font-weight: bold;
-  font-size: 14px;
-  min-height: 0;
+  font-size: 14.7px;
+  min-height: 16px;
+
 }
 
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;  
-  background: rgba(0,0,0,0);
+  background: @crust;
   transition-duration: .5s;
-  color: #ffffff;
 }
 
 tooltip {
-  background: #000000;
+  background: @crust;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: #11111b;
+  border-color: @crust;
 }
 
 #workspaces button {
@@ -31,6 +33,8 @@ tooltip {
 
 #workspaces button.active {
   color: #b4befe;
+  background: @base;
+  border-radius: 10px;
 }
 
 #workspaces button.focused {
@@ -46,32 +50,38 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
+  background: @crust;
+  color: @teal;
   border-radius: 10px;
 }
 
 #workspaces {
-  background: #000000;
+  background: @surface0;
+  border-radius: 10px;
   padding: 0px 10px;
-  margin: 3px 0px;
+  margin: 3px 0px 3px 15px;
   font-family: Symbols Nerd Font;
 }
 
 #custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight {
-  background: #000000;
-  padding: 0px 10px;
-  margin: 3px 0px;
+  background: @surface0;
+  padding: 7px 10px;
+  margin: 3px 0px 3px 0px;
 }
 
 #idle_inhibitor {
-  border-radius: 10px;
-  margin-right: 4px;
+  color: @flamingo;
+  background-color: @base;
+  border-radius: 10px; 
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #custom-dunst {
-  color: #f9e2af;
-  border-radius: 0 10px 10px 0;
+  color: @yellow;
+  background-color: @base;
+  border-radius: 10px; 
+  margin-left: 5px;
 }
 
 #custom-pomo.active {
@@ -89,17 +99,9 @@ tooltip {
 }
 
 #tray {
+  background-color: @base;
   border-radius: 10px;
-  margin-right: 4px;
-}
-
-#workspaces {
-  /*background: #1e1e2e;*/
-  background: #000000;
-  border-radius: 10px;
-  padding-right: 0px;
-  padding-left: 2px;
-  margin-left: 5px;
+  margin-right: 0px;
 }
 
 #custom-language {
@@ -110,27 +112,88 @@ tooltip {
   color: #f5c2e7;
 }
 
+/* === Clock === */
 #clock {
-  color: #f9e2af;
-  border-radius: 10px 0px 0px 10px;
-}
-
-#network {
-  border-radius: 10px 0px 0px 10px;
-  color: #fab387;
-}
-
-#pulseaudio {
-  color: #89b4fa;
-}
-
-#battery{
-  color:  #a6e3a1;
+  color: @text;
+  padding-left: 3px;
   border-radius: 0 10px 10px 0;
-  margin-right: 5px;
 }
 
+#clock.icon_time {
+  color: @yellow;
+  background: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+#clock.icon_date {
+  color: @yellow;
+  background: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+
+/* === Network === */
+#network.icon {
+  border-radius: 10px 0px 0px 10px;
+  color: @peach;
+  background-color: @base;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+#network {
+  color: @text;
+  padding-left: 3px;
+  border-radius: 0 10px 10px 0;
+}
+
+/* === Pulseaudio === */
+#pulseaudio.icon {
+  color: @blue;
+  background-color: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+#pulseaudio {
+  color: @text;
+  padding-left: 3px;
+  border-radius: 0 10px 10px 0;
+}
+
+/* === Battery === */
+#battery.icon{
+  color:  @green;
+  background-color: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+#battery{
+  color:  @text;
+  border-radius: 0 10px 10px 0;
+  padding-left: 3px;
+  margin: 3px 15px 3px 0px;
+}
+
+/* === Backlight === */
+#backlight.icon{
+  color: @yellow;
+  background-color: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 3px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
 #backlight{
-  color: #cba6f7;
+  color: @text; 
+  padding-left: 3px;
+  border-radius: 0 10px 10px 0;
 }
 

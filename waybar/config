@@ -4,8 +4,14 @@
   "height": 36,
   
   "modules-left":   ["wlr/workspaces","custom/pomo"],
-  "modules-center": ["clock", "custom/dunst"],
-  "modules-right":  ["tray", "idle_inhibitor", "network", "backlight", "pulseaudio","battery"],
+  "modules-center": ["clock#icon_time","clock#time","clock#icon_date","clock#date", "custom/dunst"],
+  "modules-right":  [
+      "tray",
+      "idle_inhibitor", 
+      "network#icon","network", 
+      "backlight#icon","backlight", 
+      "pulseaudio#icon","pulseaudio",
+      "battery#icon","battery"],
 
   "wlr/workspaces": {
     "disable-scroll": false,
@@ -98,13 +104,34 @@
     "icon-size": 13,
     "spacing": 10
   },
-  "backlight":{
+
+
+  "backlight#icon":{
     "device": "intel_backlight",
-    "format": "{icon} {percent}%",
+    "format": "{icon} ",
     "format-icons": ["󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
     "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
     "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
-    "min-length": 6 
+  },
+  "backlight":{
+    "device": "intel_backlight",
+    "format": "{percent}%",
+    "format-icons": ["󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
+    "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
+  },
+
+  "battery#icon": {
+    "interval": 3,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} ",
+    "format-charging": "󱐋",
+    "format-plugged": "󰂄",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
   "battery": {
     "interval": 3,
@@ -113,29 +140,70 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󱐋 {capacity}%",
-    "format-plugged": "󰂄 {capacity}%",
-    "format-alt": "{icon} {power:.1f} W",
+    "format": "{capacity}%",
+    "format-charging": "{capacity}%",
+    "format-plugged": "{capacity}%",
+    "format-alt": "{power:.1f} W",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   },
-  "clock": {
-   "format": "{: %R   %d/%m}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+
+  "clock#icon_time": {
+      "format": " "
   },
-  "network": {
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": " {essid}",
+  
+  "clock#time": {
+  "format": "{:%H:%M}",
+  "format-alt": "{:%A, %B %d, %Y (%R)}",
+  },
+  
+  "clock#icon_date": {
+      "format": " ",
+  },
+
+  "clock#date": {
+      "format": "{:%d.%m}",
+  },
+
+
+  "network#icon": {
+    "format-wifi": "{icon} ",
+    "format-ethernet": " ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊 Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "format-disconnected": "睊",
+    "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "~/.config/waybar/scripts/applets start",
     "on-click-right": "~/.config/waybar/scripts/applets end",
     "format-icons": ["󰤯","󰤟","󰤟","󰤢","󰤥","󰤨"]
   },
+  "network": {
+    "format-wifi": "{signalStrength}%",
+    "format-ethernet": " {essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Disconnected",
+    "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    "on-click": "~/.config/waybar/scripts/applets start",
+    "on-click-right": "~/.config/waybar/scripts/applets end",
+    "format-icons": ["󰤯","󰤟","󰤟","󰤢","󰤥","󰤨"]
+  },
+
+  "pulseaudio#icon": {
+    "format": "{icon} ",
+    "format-muted": "" ,
+    "on-click": "~/.config/waybar/scripts/volume mute",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "墳", ""]
+    }
+  },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "ﱝ Muted",
+    "format": "{volume}%",
+    "format-muted": "--%",
     "on-click": "~/.config/waybar/scripts/volume mute",
     "scroll-step": 1,
     "format-icons": {
