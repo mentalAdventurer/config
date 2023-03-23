@@ -8,7 +8,10 @@
 }
 
 window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;  
   background: rgba(0,0,0,0);
+  transition-duration: .5s;
   color: #ffffff;
 }
 
@@ -22,12 +25,12 @@ tooltip {
 
 #workspaces button {
   padding: 5px;
-  color: #313244;
+  color: #6c7086;
   margin-right: 5px;
 }
 
 #workspaces button.active {
-  color: #a6adc8;
+  color: #b4befe;
 }
 
 #workspaces button.focused {
@@ -48,7 +51,14 @@ tooltip {
   border-radius: 10px;
 }
 
-#custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #workspaces, #tray, #backlight {
+#workspaces {
+  background: #000000;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  font-family: Symbols Nerd Font;
+}
+
+#custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight {
   background: #000000;
   padding: 0px 10px;
   margin: 3px 0px;
