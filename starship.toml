@@ -12,7 +12,11 @@ symbol = " "
 [[battery.display]]
 threshold = 25
 style = 'bold red'
+discharging_symbol = "󰁻 "
+charging_symbol = "󰂆 "
 
 [[battery.display]]
 threshold = 45
 style = 'bold yellow'
+discharging_symbol = "󰁽 "
+charging_symbol = "󰂈 "
