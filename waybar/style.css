@@ -13,7 +13,7 @@
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;  
-  background: @crust;
+  background: rgba(0,0,0,0);
   transition-duration: .5s;
 }
 
@@ -85,14 +85,16 @@ tooltip {
 }
 
 #custom-pomo.active {
-  color: #a6e3a1;
+  color: @green;
+  background-color: @base;
   border-radius: 10px;
   margin-right: 4px;
   margin-left: 4px;
 }
 
 #custom-pomo.inactive {
-  color: #f38ba8;
+  color: @red;
+  background-color: @base;
   border-radius: 10px;
   margin-right: 4px;
   margin-left: 4px;
@@ -115,7 +117,7 @@ tooltip {
 /* === Clock === */
 #clock {
   color: @text;
-  padding-left: 3px;
+  padding-left: 7px;
   border-radius: 0 10px 10px 0;
 }
 
@@ -147,7 +149,7 @@ tooltip {
 }
 #network {
   color: @text;
-  padding-left: 3px;
+  padding-left: 7px;
   border-radius: 0 10px 10px 0;
 }
 
@@ -162,7 +164,7 @@ tooltip {
 }
 #pulseaudio {
   color: @text;
-  padding-left: 3px;
+  padding-left: 7px;
   border-radius: 0 10px 10px 0;
 }
 
@@ -178,7 +180,7 @@ tooltip {
 #battery{
   color:  @text;
   border-radius: 0 10px 10px 0;
-  padding-left: 3px;
+  padding-left: 7px;
   margin: 3px 15px 3px 0px;
 }
 
@@ -193,7 +195,7 @@ tooltip {
 }
 #backlight{
   color: @text; 
-  padding-left: 3px;
+  padding-left: 7px;
   border-radius: 0 10px 10px 0;
 }
 
