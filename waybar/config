@@ -129,9 +129,10 @@
       "critical": 20
     },
     "format": "{icon} ",
-    "format-charging": "󱐋",
-    "format-plugged": "󰂄",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-charging": "󱐋 ",
+    "format-plugged": "󰂄 ",
+    "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+    
   },
   "battery": {
     "interval": 3,
@@ -143,8 +144,8 @@
     "format": "{capacity}%",
     "format-charging": "{capacity}%",
     "format-plugged": "{capacity}%",
-    "format-alt": "{power:.1f} W",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    "format-alt": "{power:.1f}W",
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", "󰁹"]
   },
 
   "clock#icon_time": {
@@ -169,7 +170,7 @@
     "format-wifi": "{icon} ",
     "format-ethernet": " ",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊",
+    "format-disconnected": "睊 ",
     "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "~/.config/waybar/scripts/applets start",
     "on-click-right": "~/.config/waybar/scripts/applets end",
@@ -179,7 +180,8 @@
     "format-wifi": "{signalStrength}%",
     "format-ethernet": " {essid}",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊 Disconnected",
+    "format-alt": "{essid}",
+    "format-disconnected": "--%",
     "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
     "on-click": "~/.config/waybar/scripts/applets start",
     "on-click-right": "~/.config/waybar/scripts/applets end",
