@@ -52,10 +52,8 @@ pgrep swayidle > /dev/null ||
                 resume 'hyprctl dispatch dpms on' \
                 timeout 1800 'hyprctl dispatch dpms on && sleep 2 && systemctl suspend' &
 
-pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
 pgrep waybar > /dev/null || waybar &
 
 # Load Wallpaper
-#pgrep swww-daemon > /dev/null || swww init 
-#sleep 1 && wallpaper load
-pgrep hyprpaper > /dev/null || hyprpaper &
+pgrep swww-daemon > /dev/null || swww init 
+sleep 1 && wallpaper load
