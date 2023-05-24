@@ -1,8 +1,11 @@
 #!/usr/bin/bash
 
-swaylock -F -i "~/.config/hypr/wallpaper/MinimalismMountains.png"
-#swaylock \
-#--screenshots \
-#--indicator \
-#--clock \
-#--effect-vignette 0.2:0.2 &
+#swaylock -F -i "~/.config/hypr/wallpaper/MinimalismMountains.png"
+swaylock \
+--screenshots \
+--indicator \
+--font "JetBrainsMono Nerd Font" \
+--clock \
+--effect-vignette 0.7:1 \
+--effect-blur 10x2
+
