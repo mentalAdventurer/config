@@ -73,8 +73,8 @@ tooltip {
   color: @flamingo;
   background-color: @base;
   border-radius: 10px; 
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 #custom-dunst {
@@ -103,7 +103,7 @@ tooltip {
 #tray {
   background-color: @base;
   border-radius: 10px;
-  margin-right: 0px;
+  margin-right: 4px;
 }
 
 #custom-language {
