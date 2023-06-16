@@ -40,6 +40,9 @@ pgrep gnome-keyring-d > /dev/null ||
 pgrep swayidle > /dev/null || 
     ~/.config/hypr/scripts/swayidle.sh &
 
+pgrep event_handler.sh > /dev/null || 
+    ~/.config/hypr/scripts/event_handler.sh &
+
 # Waybar
 pgrep waybar > /dev/null || waybar &
 pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
