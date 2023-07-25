@@ -22,8 +22,8 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 pgrep nm-applet > /dev/null || nm-applet --indicator &
 pgrep blueman-applet > /dev/null || blueman-applet &
 
-pgrep clight > /dev/null && killall clight
-clight &
+pgrep wluma > /dev/null && killall wluma
+wluma &
 
 killall wl-paste 
 wl-paste -t text --watch clipman store --max-items=6000 --no-persist &
