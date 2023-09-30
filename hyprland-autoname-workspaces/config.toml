@@ -22,10 +22,14 @@ obsidian = ""
 anki = "󱛊"
 transmission-remote-gtk = "󰦗"
 DEFAULT = "󰲋"
-[Ss]team = ""
+"[Ss]team" = ""
 gnome-disks = "󰋊"
 font-manager = ""
 kitty = ""
+"google-chrome" = ""
+pavucontrol = "󱀞"
+"org.gnome.Nautilus" = ""
+blueman-manager = "󰂱"
 
 [class_active]
 
