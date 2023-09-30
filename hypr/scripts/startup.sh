@@ -1,20 +1,6 @@
 #!/usr/bin/bash
 
 #######################################################################
-#                             ENVIRONMENT                             #
-#######################################################################
-
-if [ ! -v wrapperhl ]; then 
-    export PATH=$PATH:/home/fabian/.local/bin
-    export XDG_CONFIG_HOME=$HOME/.config
-    export XDG_CACHE_HOME=$HOME/.cache
-    export XDG_DATA_HOME=$HOME/.local/share
-    export ZDOTDIR=$HOME/.config/zsh
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    export XCURSOR_SIZE=24
-fi
-
-#######################################################################
 #                         Startup Application                         #
 #######################################################################
 
@@ -29,7 +15,10 @@ killall wl-paste
 wl-paste -t text --watch clipman store --max-items=6000 --no-persist &
 wl-paste -p -t text --watch clipman store --max-items=6000 -P --histpath="~/.local/share/clipman-primary.json" &
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
-pgrep dunst > /dev/null || dunst & 
+pgrep swaync > /dev/null || swaync & 
+
+pgrep kdeconnectd > /dev/null || 
+    /usr/lib/kdeconnectd &
 
 pgrep polkit-kde-auth > /dev/null || 
     /usr/lib/polkit-kde-authentication-agent-1 &
@@ -40,8 +29,12 @@ pgrep gnome-keyring-d > /dev/null ||
 pgrep swayidle > /dev/null || 
     ~/.config/hypr/scripts/swayidle.sh &
 
-pgrep event_handler.sh > /dev/null || 
-    ~/.config/hypr/scripts/event_handler.sh &
+#pgrep event_handler.sh > /dev/null || 
+#    ~/.config/hypr/scripts/event_handler.sh &
+
+# swayosd
+pgrep swayosd-server > /dev/null || 
+    swayosd-server &
 
 # Waybar
 pgrep waybar > /dev/null || waybar &
