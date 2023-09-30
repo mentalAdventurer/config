@@ -10,6 +10,12 @@
 
 }
 
+#custom-notification, #custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight {
+  background: @surface0;
+  padding: 7px 10px;
+  margin: 3px 0px 3px 0px;
+}
+
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;  
@@ -63,11 +69,6 @@ tooltip {
   font-family: Symbols Nerd Font;
 }
 
-#custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight {
-  background: @surface0;
-  padding: 7px 10px;
-  margin: 3px 0px 3px 0px;
-}
 
 #idle_inhibitor {
   color: @flamingo;
@@ -78,6 +79,13 @@ tooltip {
 }
 
 #custom-dunst {
+  color: @yellow;
+  background-color: @base;
+  border-radius: 10px; 
+  margin-left: 5px;
+}
+
+#custom-notification {
   color: @yellow;
   background-color: @base;
   border-radius: 10px; 

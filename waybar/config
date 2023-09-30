@@ -3,8 +3,8 @@
   "position": "top", 
   "height": 36,
   
-  "modules-left":   ["wlr/workspaces","custom/pomo"],
-  "modules-center": ["clock#icon_time","clock#time","clock#icon_date","clock#date", "custom/dunst"],
+  "modules-left":   ["hyprland/workspaces","custom/pomo"],
+  "modules-center": ["clock#icon_time","clock#time","clock#icon_date","clock#date","custom/notification"],
   "modules-right":  [
       "tray",
       "idle_inhibitor", 
@@ -12,6 +12,13 @@
       "backlight#icon","backlight", 
       "pulseaudio#icon","pulseaudio",
       "battery#icon","battery"],
+
+  "hyprland/workspaces": {
+	"format": "{name}",
+    "disable-scroll": false,
+    "all-outputs": false,
+    "on-click": "activate",
+    },
 
   "wlr/workspaces": {
     "disable-scroll": false,
@@ -57,7 +64,29 @@
 "custom/dunst": {
     "exec": "~/.config/waybar/scripts/notifications",
     "on-click": "dunstctl set-paused toggle",
+    "on-click-right": "dunstctl history-pop",
     "restart-interval": 1,
+},
+
+"custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
 },
 
 "custom/pomo":{
