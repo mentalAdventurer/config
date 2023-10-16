@@ -12,8 +12,8 @@ pgrep wluma > /dev/null && killall wluma
 wluma &
 
 killall wl-paste 
-wl-paste -t text --watch clipman store --max-items=6000 --no-persist &
-wl-paste -p -t text --watch clipman store --max-items=6000 -P --histpath="~/.local/share/clipman-primary.json" &
+wl-paste --watch cliphist store
+
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
 pgrep swaync > /dev/null || swaync & 
 
