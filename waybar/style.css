@@ -38,7 +38,7 @@ tooltip {
 }
 
 #workspaces button.active {
-  color: #b4befe;
+  color: @flamingo;
   background: @base;
   border-radius: 10px;
 }
@@ -48,6 +48,7 @@ tooltip {
   background: #eba0ac;
   border-radius: 10px;
 }
+
 
 #workspaces button.urgent {
   color: #11111b;

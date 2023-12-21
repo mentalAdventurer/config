@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top", 
-  "height": 36,
+  "height": 40,
   
   "modules-left":   ["hyprland/workspaces","custom/pomo"],
   "modules-center": ["clock#icon_time","clock#time","clock#icon_date","clock#date","custom/notification"],
@@ -18,40 +18,8 @@
     "disable-scroll": false,
     "all-outputs": false,
     "on-click": "activate",
+    "show-special": false,
     },
-
-  "wlr/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": false,
-    "on-click": "activate",
-    //"format": "{icon}",
-    /*"persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
-    },*/
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "default": "",
-      "active": ""
-    }
-  },
 
 "idle_inhibitor": {
     "format": "{icon}",
@@ -97,39 +65,6 @@
     "format": "{}"
 },
 
-"wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-       "Alacritty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
-},
-
-"mpris": {
-	"format": "DEFAULT: {player_icon} {dynamic}",
-	"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
-	"player-icons": {
-		"default": "▶",
-		"mpv": "🎵"
-	},
-	"status-icons": {
-		"paused": "⏸"
-	},
-	// "ignored-players": ["firefox"]
-},
-
-  "custom/updates": {
-    "exec": "(checkupdates ; yay -Qua) | wc -l",
-    "interval": 18000,
-    "format": " {}"
-  },
   "tray": {
     "icon-size": 13,
     "spacing": 10
