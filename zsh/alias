@@ -1,6 +1,15 @@
 # Alias
+# Lists
 alias ls='eza --color=auto'
 alias ll='eza -l --icons --git'
 alias la='eza -la --icons --git'
 alias lt='eza --tree --level=3 --icons --git --long --git'
+
+# Git
+alias gs='git status'
+alias gsh='git status --untracked-files=no'
+alias gl='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+
+# Programms
 alias lf='lfcd'
+
