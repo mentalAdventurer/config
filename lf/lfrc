@@ -117,6 +117,12 @@ cmd zip ${{
     rm -rf $1
 }}
 
+# wallpaper
+cmd wallpaper ${{
+    set -f 
+    swww img $f
+}}
+
 # fzf
 cmd fzf_jump ${{
     res="$(find -L . -maxdepth 3 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
