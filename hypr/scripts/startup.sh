@@ -42,4 +42,3 @@ pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
 
 # Load Wallpaper
 pgrep swww-daemon > /dev/null || swww init 
-sleep 1 && wallpaper load
