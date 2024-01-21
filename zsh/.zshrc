@@ -11,8 +11,10 @@ export XDG_DATA_HOME=$HOME/.local/share
 # Sources
 source $HOME/.config/zsh/functions
 source $HOME/.config/zsh/plugins
-source $HOME/.config/zsh/zoxide
 source $HOME/.config/zsh/alias
+
+# zoxide
+eval "$(zoxide init zsh)"
 
 # History in cache directory
 HISTSIZE=10000000
