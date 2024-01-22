@@ -36,18 +36,10 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-
 # Edit line in neovim 
 autoload -U edit-command-line
 # Emacs style
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
-
-
-# Substring Search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
 eval "$(starship init zsh)"
