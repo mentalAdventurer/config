@@ -13,8 +13,6 @@ source $HOME/.config/zsh/functions
 source $HOME/.config/zsh/plugins
 source $HOME/.config/zsh/alias
 
-# zoxide
-eval "$(zoxide init zsh)"
 
 # History in cache directory
 HISTSIZE=10000000
@@ -28,6 +26,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # Use vim keys in tab complete menu
 bindkey -v
 
@@ -35,6 +36,14 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# remove delay entring normal mode
+ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_NEX
+ZVM_KEYTIMEOUT=0.001
+ZVM_ESCAPE_KEYTIMEOUT=0.001
 
 # Edit line in neovim 
 autoload -U edit-command-line
