@@ -31,6 +31,8 @@ pgrep swayidle > /dev/null ||
 
 #pgrep event_handler.sh > /dev/null || 
 #    ~/.config/hypr/scripts/event_handler.sh &
+pgrep sway-audio-idle-inhibit > /dev/null || 
+    sway-audio-idle-inhibit &
 
 # swayosd
 pgrep swayosd-server > /dev/null || 

@@ -3,11 +3,4 @@
 pgrep 1password &&
     1password --lock
 
-swaylock \
---screenshots \
---indicator \
---font "JetBrainsMono Nerd Font" \
---clock \
---effect-vignette 0.7:1 \
---effect-blur 10x2
-
+swaylock
