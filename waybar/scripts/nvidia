@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Define your custom icons for each state
+ACTIVE_ICON="<span foreground='#f38ba8'></span>" # Example icon for active
+SUSPENDING_ICON="" # Example icon for suspending
+SUSPENDED_ICON="" # Example icon for suspended
+UNKNOWN_ICON="-" # Example icon for an unknown state
+
+# Read the current state of the NVIDIA Optimus card
+STATE=$(cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status)
+
+# Check the state and assign the corresponding icon
+case $STATE in
+    "active")
+        ICON=$ACTIVE_ICON
+        ;;
+    "suspending")
+        ICON=$SUSPENDING_ICON
+        ;;
+    "suspended")
+        ICON=$SUSPENDED_ICON
+        ;;
+    *)
+        ICON=$UNKNOWN_ICON
+        ;;
+esac
+
+# Output the icon
+echo $ICON

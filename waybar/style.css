@@ -10,7 +10,7 @@
 
 }
 
-#custom-notification, #custom-pomo, #custom-dunst, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight {
+#custom-notification, #custom-pomo, #custom-dunst,#custom-nvidia, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight, #language {
   background: @surface0;
   padding: 7px 10px;
   margin: 3px 0px 3px 0px;
@@ -32,35 +32,45 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 5px;
   color: #6c7086;
-  margin-right: 5px;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  animation: none;
+  transition: none; 
 }
 
 #workspaces button.active {
-  color: @flamingo;
+  color: @text;
   background: @base;
-  border-radius: 10px;
+  margin-left: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(.43,.08,.56,.92);
+
+}
+
+#workspaces button:hover {
+  background: @crust;
 }
 
 #workspaces button.focused {
   color: #a6adc8;
   background: #eba0ac;
-  border-radius: 10px;
 }
-
 
 #workspaces button.urgent {
   color: #11111b;
   background: #a6e3a1;
-  border-radius: 10px;
 }
 
-#workspaces button:hover {
-  background: @crust;
-  color: @teal;
-  border-radius: 10px;
-}
 
 #workspaces {
   background: @surface0;
@@ -70,12 +80,32 @@ tooltip {
   font-family: Symbols Nerd Font;
 }
 
+#custom-notification {
+  color: @flamingo;
+  background-color: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-left: 5px;
+}
 
 #idle_inhibitor {
   color: @flamingo;
   background-color: @base;
-  border-radius: 10px; 
-  margin-left: 4px;
+  border-radius: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#custom-nvidia {
+  color: @flamingo;
+  background-color: @base;
+  border-radius: 0px 10px 10px 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+  margin-left: 0px;
   margin-right: 4px;
 }
 
@@ -86,13 +116,8 @@ tooltip {
   margin-left: 5px;
 }
 
-#custom-notification {
-  color: @yellow;
-  background-color: @base;
-  border-radius: 10px; 
-  margin-left: 5px;
-}
 
+/* === Pomo === */
 #custom-pomo.active {
   color: @green;
   background-color: @base;
@@ -115,12 +140,41 @@ tooltip {
   margin-right: 4px;
 }
 
-#custom-language {
-  color: #f38ba8;
+
+/* === Power Group === */
+#group-power {
+  color: @red;
+  background-color: @base;
+  border-radius: 10px;
+  padding: 0px 10px;
+  margin: 3px 15px 3px 5px;
 }
 
-#custom-updates {
-  color: #f5c2e7;
+#custom-reboot, #custom-lock, #custom-quit {
+    color: @text;
+    padding-right: 3px;
+    padding-left: 5px;
+}
+
+#custom-reboot{
+    padding-right: 7px;
+}
+
+
+/* === Language === */
+#language.icon {
+  color: @yellow;
+  background: @base;
+  border-radius: 10px 0px 0px 10px;
+  padding-right: 8px;
+  padding-left: 10px;
+  margin: 3px 0px 3px 5px;
+}
+
+#language {
+  color: @text;
+  padding-left: 7px;
+  border-radius: 0 10px 10px 0;
 }
 
 /* === Clock === */
@@ -190,7 +244,7 @@ tooltip {
   color:  @text;
   border-radius: 0 10px 10px 0;
   padding-left: 7px;
-  margin: 3px 15px 3px 0px;
+  margin: 3px 0px 3px 0px;
 }
 
 /* === Backlight === */
