@@ -34,7 +34,7 @@
 "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-        "activated": "󰅶",
+        "activated": "<span foreground='#f38ba8'>󰅶</span>",
         "deactivated": "󰛊"
         }
 },
