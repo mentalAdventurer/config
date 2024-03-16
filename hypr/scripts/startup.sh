@@ -26,13 +26,8 @@ pgrep polkit-kde-auth > /dev/null ||
 pgrep gnome-keyring-d > /dev/null ||
     /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
 
-pgrep swayidle > /dev/null || 
-    ~/.config/hypr/scripts/swayidle.sh &
-
-#pgrep event_handler.sh > /dev/null || 
-#    ~/.config/hypr/scripts/event_handler.sh &
-pgrep sway-audio-idle-inhibit > /dev/null || 
-    sway-audio-idle-inhibit &
+pgrep hypridle > /dev/null || 
+    hypridle &
 
 # swayosd
 pgrep swayosd-server > /dev/null || 
