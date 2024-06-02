@@ -51,9 +51,9 @@ def single_display_mode(monitor_names):
     if selected_monitor in monitor_names:
         monitor_names.remove(selected_monitor)
 
-    if selected_monitor in ["DP-4", "DP-5"]:
+    if selected_monitor in ["DP-1"]:
         run_command(f'hyprctl keyword monitor {monitor_names[0]},disable')
-        run_command(f'hyprctl keyword monitor {selected_monitor},2560x1440,0x0,1')
+        run_command(f'hyprctl keyword monitor {selected_monitor},prefered,0x0,1')
     else:
         run_command(f'hyprctl keyword monitor {monitor_names[0]},disable')
         run_command(f'hyprctl keyword monitor {selected_monitor},prefered,0x0,1')

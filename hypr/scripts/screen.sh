@@ -22,7 +22,7 @@ elif [ "$mode" == "${mode_options[1]}" ]; then
     done
 
     # Adapt Scaling to Monitor
-    if [[ $selected_monitor == "DP-4" || $selected_monitor == "DP-5" ]]; then
+    if [[ $selected_monitor == "DP-1" || $selected_monitor == "DP-5" ]]; then
         [ -z "$selected_monitor" ] || hyprctl keyword monitor "${monitor_names[0]}",disable
         [ -z "$selected_monitor" ] || hyprctl keyword monitor "$selected_monitor",2560x1440,0x0,1
     else 

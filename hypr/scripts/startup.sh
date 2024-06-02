@@ -17,17 +17,14 @@ wl-paste --watch cliphist store &
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
 pgrep swaync > /dev/null || swaync & 
 
-pgrep kdeconnectd > /dev/null || 
-    /usr/lib/kdeconnectd &
-
-pgrep polkit-kde-auth > /dev/null || 
-    /usr/lib/polkit-kde-authentication-agent-1 &
+pgrep lxpolkit > /dev/null || 
+    lxpolkit & 
 
 pgrep gnome-keyring-d > /dev/null ||
     /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
 
-pgrep hypridle > /dev/null || 
-    hypridle &
+#pgrep hypridle > /dev/null || 
+#    hypridle &
 
 # swayosd
 pgrep swayosd-server > /dev/null || 
@@ -38,4 +35,5 @@ pgrep waybar > /dev/null || waybar &
 pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
 
 # Load Wallpaper
-pgrep swww-daemon > /dev/null || swww init 
+#pgrep hyprpaper > /dev/null || hyprpaper &
+ pgrep swww-daemon > /dev/null || swww-daemon & 
