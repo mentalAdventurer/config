@@ -10,3 +10,8 @@ fopen(){
         fd -L -e "$1" --print0 | fzf --read0 | xargs -0 xdg-open 
     fi
 }
+
+lfcd () {
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}

@@ -1,9 +1,9 @@
 # Alias
 # Lists
-alias ls='eza --color=auto'
-alias ll='eza -l --icons --git'
-alias la='eza -la --icons --git'
-alias lt='eza --tree --level=3 --icons --git --long --git'
+alias ls='exa --color=auto'
+alias ll='exa -l --icons --git'
+alias la='exa -la --icons --git'
+alias lt='exa --tree --level=3 --icons --git --long --git'
 
 # Git
 alias gs='git status'

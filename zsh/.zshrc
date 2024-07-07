@@ -2,15 +2,29 @@
 autoload -U colors && colors
 PROMPT=" %{$fg[green]%}% %~ %{$reset_color%}  "
 
+# Zplug
+source /usr/share/zsh/scripts/zplug/init.zsh 
+source $HOME/.config/zsh/plugins
+# Install uninstall plugins
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load
+
+
 # Path
 export PATH=$PATH:/home/fabian/.local/bin
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+setopt HIST_FIND_NO_DUPS
+
 # Sources
 source $HOME/.config/zsh/functions
-source $HOME/.config/zsh/plugins
 source $HOME/.config/zsh/alias
 
 
