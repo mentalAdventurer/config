@@ -43,6 +43,11 @@ _comp_options+=(globdots)
 # zoxide
 eval "$(zoxide init zsh)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Use vim keys in tab complete menu
 bindkey -v
 
