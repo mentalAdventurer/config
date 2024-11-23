@@ -8,8 +8,8 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 pgrep nm-applet > /dev/null || nm-applet --indicator &
 pgrep blueman-applet > /dev/null || blueman-applet &
 
-pgrep wluma > /dev/null && killall wluma
-wluma &
+#pgrep wluma > /dev/null && killall wluma
+#wluma &
 
 killall wl-paste 
 wl-paste --watch cliphist store &
