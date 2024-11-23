@@ -23,8 +23,8 @@ pgrep lxpolkit > /dev/null ||
 pgrep gnome-keyring-d > /dev/null ||
     /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
 
-#pgrep hypridle > /dev/null || 
-#    hypridle &
+pgrep hypridle > /dev/null ||
+    hypridle &
 
 # swayosd
 pgrep swayosd-server > /dev/null || 
