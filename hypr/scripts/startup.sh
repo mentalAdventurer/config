@@ -36,4 +36,5 @@ pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
 
 # Load Wallpaper
 #pgrep hyprpaper > /dev/null || hyprpaper &
- pgrep swww-daemon > /dev/null || swww-daemon & 
+swaybg -m fill -o DP-2 -i ~/.config/hypr/wallpaper/Bergspitze.jpg &
+swaybg -m fill -o DP-1 -i ~/.config/hypr/wallpaper/Bergspitze.jpg &
