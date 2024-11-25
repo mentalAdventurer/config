@@ -4,7 +4,7 @@ autoload -U colors && colors
 PROMPT=" %{$fg[green]%}% %~ %{$reset_color%}  "
 
 # Zplug
-source /usr/share/zsh/scripts/zplug/init.zsh 
+source /usr/share/zplug/init.zsh
 source $HOME/.config/zsh/plugins
 # Install uninstall plugins
 if ! zplug check --verbose; then
