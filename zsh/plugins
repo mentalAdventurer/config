@@ -1,3 +1,4 @@
+#! /bin/zsh
 zplug "jeffreytse/zsh-vi-mode"
 zplug "zsh-users/zsh-completions",              defer:0
 zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"

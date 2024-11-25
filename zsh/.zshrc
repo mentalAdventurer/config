@@ -1,3 +1,4 @@
+#! /bin/zsh
 # Colors and Prompt
 autoload -U colors && colors
 PROMPT=" %{$fg[green]%}% %~ %{$reset_color%}  "

@@ -1,3 +1,4 @@
+#! /bin/zsh
 # Functions
 fcd() { 
     z "$( fd -t d . $1 | fzf )"

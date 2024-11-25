@@ -1,3 +1,4 @@
+#! /bin/zsh
 # Alias
 # Lists
 alias ls='exa --color=auto'
