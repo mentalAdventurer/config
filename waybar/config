@@ -20,9 +20,7 @@
     "modules-right": [
         "tray",
         "network",
-        "backlight",
         "pulseaudio",
-        "battery",
         "group/group-power"
     ],
     "hyprland/workspaces": {
