@@ -17,8 +17,8 @@ wl-paste --watch cliphist store &
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
 pgrep dunst > /dev/null || dunst &
 
-pgrep lxpolkit > /dev/null || 
-    lxpolkit & 
+pgrep -f polkit-kde-authentication-agent-1 > /dev/null ||
+    /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
 
 pgrep gnome-keyring-d > /dev/null ||
     /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
