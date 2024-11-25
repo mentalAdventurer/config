@@ -27,8 +27,8 @@ pgrep hypridle > /dev/null ||
     hypridle &
 
 # swayosd
-pgrep swayosd-server > /dev/null || 
-    swayosd-server &
+#pgrep swayosd-server > /dev/null ||
+#    swayosd-server &
 
 # Waybar
 pgrep waybar > /dev/null || waybar &
