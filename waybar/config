@@ -3,14 +3,12 @@
   "position": "top", 
   "height": 40,
   
-  "modules-left":   ["hyprland/workspaces","custom/pomo"],
+  "modules-left":   ["hyprland/workspaces"],
   "modules-center": ["hyprland/language#icon","hyprland/language","clock#icon_time","clock#time","clock#icon_date","clock#date","custom/notification","idle_inhibitor","custom/nvidia"],
   "modules-right":  [
       "tray",
       "network#icon","network", 
-      "backlight#icon","backlight", 
       "pulseaudio#icon","pulseaudio",
-      "battery#icon","battery",
       "group/group-power"],
 
   "hyprland/workspaces": {
