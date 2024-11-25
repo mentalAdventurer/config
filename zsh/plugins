@@ -4,13 +4,3 @@ zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-compl
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 zplug "chr-fritz/docker-completion.zshplugin"
-
-## Legacy
-# Load Plugins
-#source /home/$USER/.nix-profile/share/zsh-syntax-highlighting
-#source /home/$USER/.nix-profile/share/zsh-vi-mode
-#source /home/$USER/.nix-profile/share/zsh-autosuggestions
-#source /home/$USER/.nix-profile/share/zsh-history-substring-search
-
-# Others
-#source /etc/profile.d/lfcd.sh
