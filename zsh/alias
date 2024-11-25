@@ -12,9 +12,10 @@ alias gsh='git status --untracked-files=no'
 alias gl='git log --graph --pretty=format:"%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 
 # fd | bat (Ubuntu)
-if grep -q "Ubuntu" /etc/os-release: then
+if grep -q "Ubuntu" /etc/os-release; then
     alias fd='fdfind'
     alias bat='batcat'
+fi
 
 # Programms
 alias lf='lfcd'
