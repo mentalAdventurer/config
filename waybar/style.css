@@ -39,6 +39,10 @@ window#waybar {
   transition: none; 
 }
 
+#workspaces button.visible {
+  color: @green;
+}
+
 #workspaces button.active {
   color: @black;
   background: @green;
@@ -56,10 +60,6 @@ window#waybar {
   background: @blue;
 }
 
-#workspaces button.focused {
-  color: @black;
-  background: @foreground;
-}
 
 #workspaces button.urgent {
   color: @black;
