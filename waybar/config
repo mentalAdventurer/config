@@ -87,7 +87,7 @@
             "󰫅",
             "󰫆",
             "󰫇",
-            "󰫈"
+            "<span foreground='#ff9e64'>󰫈</span>"
         ],
         "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
         "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down"
@@ -129,7 +129,7 @@
         "on-click": "~/.config/waybar/scripts/applets start",
         "on-click-right": "~/.config/waybar/scripts/applets end",
         "format-icons": [
-            "󰤯",
+            "<span foreground='#f7768e'>󰤯</span>",
             "󰤟",
             "󰤟",
             "󰤢",
