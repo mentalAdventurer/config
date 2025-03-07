@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define your custom icons for each state
-ACTIVE_ICON="<span foreground='#f38ba8'></span>" # Example icon for active
+ACTIVE_ICON="<span foreground='#f7768e'></span>" # Example icon for active
 SUSPENDING_ICON="" # Example icon for suspending
 SUSPENDED_ICON="" # Example icon for suspended
 UNKNOWN_ICON="-" # Example icon for an unknown state
