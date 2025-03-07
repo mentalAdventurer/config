@@ -1,217 +1,178 @@
 {
-  "layer": "top",
-  "position": "top", 
-  "height": 40,
-  
-  "modules-left":   ["hyprland/workspaces","custom/pomo"],
-  "modules-center": ["hyprland/language#icon","hyprland/language","clock#icon_time","clock#time","clock#icon_date","clock#date","custom/notification","idle_inhibitor","custom/nvidia"],
-  "modules-right":  [
-      "tray",
-      "network#icon","network", 
-      "backlight#icon","backlight", 
-      "pulseaudio#icon","pulseaudio",
-      "battery#icon","battery",
-      "group/group-power"],
-
-  "hyprland/workspaces": {
-	"format": "{name}",
-    "disable-scroll": false,
-    "all-outputs": false,
-    "on-click": "activate",
-    "show-special": false,
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/language",
+        "clock#time",
+        "clock#date",
+        "custom/notification",
+        "idle_inhibitor",
+        "custom/nvidia"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "group/group-power"
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "disable-scroll": false,
+        "all-outputs": false,
+        "on-click": "activate",
+        "show-special": false
     },
-
-    "hyprland/language#icon": {
-        "format": "󰌌 ",
-    },
-
     "hyprland/language": {
-    "format": "{}",
-    "format-de": "de",
-    "format-en": "uk",
+        "format": "󰌌 {}",
+        "format-de": "de",
+        "format-en": "uk"
     },
-
-"idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "<span foreground='#f38ba8'>󰅶</span>",
-        "deactivated": "󰛊"
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "<span foreground='#f38ba8'>󰅶</span>",
+            "deactivated": "󰛊"
         }
-},
-
-"custom/dunst": {
-    "exec": "~/.config/waybar/scripts/notifications",
-    "on-click": "dunstctl set-paused toggle",
-    "on-click-right": "dunstctl history-pop",
-    "restart-interval": 1,
-},
-
-"custom/nvidia": {
-    "exec": "~/.config/waybar/scripts/nvidia",
-    "restart-interval": 1,
-},
-
-"custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='#f38ba8'></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='#f38ba8'></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='#f38ba8'></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='#f38ba8'></span>",
-      "dnd-inhibited-none": ""
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click-right": "swaync-client -op &",
-    "on-click": "swaync-client -d -sw",
-    "on-click-middle": "swaync-client -C",
-    "escape": false
-},
-
-"custom/pomo":{
-    "restart-interval": 1,
-    "return-type":"json",
-    "exec": "~/.config/waybar/scripts/pomo",
-    "format": "{}"
-},
-
-  "tray": {
-    "icon-size": 13,
-    "spacing": 10
-  },
-
-
-  "backlight#icon":{
-    "device": "intel_backlight",
-    "format": "{icon} ",
-    "format-icons": ["󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
-    "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
-  },
-  "backlight":{
-    "device": "intel_backlight",
-    "format": "{percent}%",
-    "format-icons": ["󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
-    "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down",
-  },
-
-  "battery#icon": {
-    "interval": 3,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
+    "custom/nvidia": {
+        "exec": "~/.config/waybar/scripts/nvidia",
+        "restart-interval": 1
     },
-    "format": "{icon} ",
-    "format-charging": "󱐋 ",
-    "format-plugged": "󰂄 ",
-    "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
-    
-  },
-  "battery": {
-    "interval": 3,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='#f38ba8'></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='#f38ba8'></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='#f38ba8'></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='#f38ba8'></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click-right": "swaync-client -op &",
+        "on-click": "swaync-client -d -sw",
+        "on-click-middle": "swaync-client -C",
+        "escape": false
     },
-    "format": "{capacity}%",
-    "format-charging": "{capacity}%",
-    "format-plugged": "{capacity}%",
-    "format-alt": "{power:.1f}W",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", "󰁹"]
-  },
-
-  "clock#icon_time": {
-      "format": " "
-  },
-  
-  "clock#time": {
-  "format": "{:%H:%M}",
-  "format-alt": "{:%A, %B %d, %Y (%R)}",
-  },
-  
-  "clock#icon_date": {
-      "format": " ",
-  },
-
-  "clock#date": {
-      "format": "{:%d.%m}",
-  },
-
-
-  "network#icon": {
-    "format-wifi": "{icon} ",
-    "format-ethernet": " ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "睊 ",
-    "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
-    "on-click": "~/.config/waybar/scripts/applets start",
-    "on-click-right": "~/.config/waybar/scripts/applets end",
-    "format-icons": ["󰤯","󰤟","󰤟","󰤢","󰤥","󰤨"]
-  },
-  "network": {
-    "format-wifi": "{signalStrength}%",
-    "format-ethernet": " {essid}",
-    "format-linked": "{ifname} (No IP) ",
-    "format-alt": "{essid}",
-    "format-disconnected": "--%",
-    "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
-    "on-click": "~/.config/waybar/scripts/applets start",
-    "on-click-right": "~/.config/waybar/scripts/applets end",
-    "format-icons": ["󰤯","󰤟","󰤟","󰤢","󰤥","󰤨"]
-  },
-
-  "pulseaudio#icon": {
-    "format": "{icon} ",
-    "format-muted": "" ,
-    "on-click": "~/.config/waybar/scripts/volume mute",
-    "scroll-step": 1,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", "墳", ""]
-    }
-  },
-  "pulseaudio": {
-    "format": "{volume}%",
-    "format-muted": "--%",
-    "on-click": "~/.config/waybar/scripts/volume mute",
-    "scroll-step": 1,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", "墳", ""]
-    }
-  },
+    "custom/pomo": {
+        "restart-interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/pomo",
+        "format": "{}"
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}%",
+        "format-icons": [
+            "󰫃",
+            "󰫄",
+            "󰫅",
+            "󰫆",
+            "󰫇",
+            "󰫈"
+        ],
+        "on-scroll-up": "~/.config/waybar/scripts/brightness -qs up",
+        "on-scroll-down": "~/.config/waybar/scripts/brightness -qs down"
+    },
+    "battery": {
+        "interval": 3,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{power:.1f}W",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "󰁹"
+        ]
+    },
+    "clock#time": {
+        "format": " {:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}"
+    },
+    "clock#date": {
+        "format": " {:%d.%m}"
+    },
+    "network": {
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": " {essid}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-alt": "{essid}",
+        "format-disconnected": "--%",
+        "tooltip-format-wifi": "SSID: {essid} | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+        "on-click": "~/.config/waybar/scripts/applets start",
+        "on-click-right": "~/.config/waybar/scripts/applets end",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "--%",
+        "on-click": "~/.config/waybar/scripts/volume mute",
+        "scroll-step": 1,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "墳",
+                ""
+            ]
+        }
+    },
     "group/group-power": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 500,
             "children-class": "not-power",
-            "transition-left-to-right": false,
+            "transition-left-to-right": false
         },
         "modules": [
-            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/power",
             "custom/quit",
             "custom/suspend",
             "custom/hibernate",
             "custom/lock",
-            "custom/reboot",
+            "custom/reboot"
         ]
     },
     "custom/quit": {
@@ -230,7 +191,7 @@
         "on-click": "reboot"
     },
     "custom/power": {
-        "format": "",
+        "format": "⏻",
         "tooltip": false,
         "on-click": "shutdown now"
     },
@@ -243,5 +204,5 @@
         "format": "",
         "tooltip": false,
         "on-click": "systemctl suspend"
-    },
+    }
 }
