@@ -162,15 +162,6 @@ tooltip {
 
 
 /* === Language === */
-#language.icon {
-  color: @yellow;
-  background: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 8px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
-
 #language {
   color: @text;
   padding-left: 7px;
@@ -184,32 +175,7 @@ tooltip {
   border-radius: 0 10px 10px 0;
 }
 
-#clock.icon_time {
-  color: @yellow;
-  background: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
-#clock.icon_date {
-  color: @yellow;
-  background: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
-
 /* === Network === */
-#network.icon {
-  border-radius: 10px 0px 0px 10px;
-  color: @peach;
-  background-color: @base;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
 #network {
   color: @text;
   padding-left: 7px;
@@ -217,14 +183,6 @@ tooltip {
 }
 
 /* === Pulseaudio === */
-#pulseaudio.icon {
-  color: @blue;
-  background-color: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
 #pulseaudio {
   color: @text;
   padding-left: 7px;
@@ -232,14 +190,6 @@ tooltip {
 }
 
 /* === Battery === */
-#battery.icon{
-  color:  @green;
-  background-color: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
 #battery{
   color:  @text;
   border-radius: 0 10px 10px 0;
@@ -248,14 +198,6 @@ tooltip {
 }
 
 /* === Backlight === */
-#backlight.icon{
-  color: @yellow;
-  background-color: @base;
-  border-radius: 10px 0px 0px 10px;
-  padding-right: 3px;
-  padding-left: 10px;
-  margin: 3px 0px 3px 5px;
-}
 #backlight{
   color: @text; 
   padding-left: 7px;
