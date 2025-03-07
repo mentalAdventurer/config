@@ -100,21 +100,16 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{power:.1f}W",
+        "format-charging": "{icon} {capacity}%",
+        "format-plugged": "{icon} capacity}%",
+        "format-alt": "{icon} {power:.1f}W",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "󰁹"
+            "<span foreground='#f7768e'></span>",
+            "<span foreground='#f7768e'></span>",
+            "<span foreground='#ff9e64'></span>",
+            "",
+            "",
+            ""
         ]
     },
     "clock#time": {
