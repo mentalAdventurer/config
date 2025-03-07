@@ -39,7 +39,7 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "<span foreground='#f38ba8'>󰅶</span>",
+            "activated": "<span foreground='#f7768e'>󰅶</span>",
             "deactivated": "󰛊"
         }
     },
@@ -51,13 +51,13 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='#f38ba8'></span>",
+            "notification": "<span foreground='#f7768e'></span>",
             "none": "",
-            "dnd-notification": "<span foreground='#f38ba8'></span>",
+            "dnd-notification": "<span foreground='#f7768e'></span>",
             "dnd-none": "",
-            "inhibited-notification": "<span foreground='#f38ba8'></span>",
+            "inhibited-notification": "<span foreground='#f7768e'></span>",
             "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='#f38ba8'></span>",
+            "dnd-inhibited-notification": "<span foreground='#f7768e'></span>",
             "dnd-inhibited-none": ""
         },
         "return-type": "json",
