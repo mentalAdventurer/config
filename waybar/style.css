@@ -3,36 +3,31 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Symbols Nerd Font, JetBrainsMono Nerd Font; 
+  font-family: JetBrainsMono Nerd Font Propo; 
   font-weight: bold;
   font-size: 14.7px;
-  min-height: 16px;
-
-}
-
-#custom-notification, #custom-pomo, #custom-dunst,#custom-nvidia, #idle_inhibitor, #custom-language, #custom-updates, #custom-caffeine, #clock, #battery, #pulseaudio, #network, #tray, #backlight, #language {
-  background: @surface0;
-  padding: 7px 10px;
-  margin: 3px 0px 3px 0px;
 }
 
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;  
-  background: rgba(0,0,0,0);
   transition-duration: .5s;
+  border-radius: 10px;
+  background: @background;
+  margin: 10px 0 0 0;
 }
 
-tooltip {
-  background: @crust;
+
+#workspaces {
+  background: @black;
   border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @crust;
+  padding: 0px 10px;
+  margin: 3px 0px 3px 15px;
+  font-family: Symbols Nerd Font;
 }
 
 #workspaces button {
-  color: #6c7086;
+  color: @grey;
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
@@ -46,8 +41,8 @@ tooltip {
 }
 
 #workspaces button.active {
-  color: @text;
-  background: @base;
+  color: @black;
+  background: @foreground;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -58,41 +53,29 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background: @crust;
+  color: @black;
+  background: @blue;
 }
 
 #workspaces button.focused {
-  color: #a6adc8;
-  background: #eba0ac;
+  color: @black;
+  background: @foreground;
 }
 
 #workspaces button.urgent {
-  color: #11111b;
-  background: #a6e3a1;
-}
-
-
-#workspaces {
-  background: @surface0;
-  border-radius: 10px;
-  padding: 0px 10px;
-  margin: 3px 0px 3px 15px;
-  font-family: Symbols Nerd Font;
+  color: @black;
+  background: @red;
 }
 
 #custom-notification {
-  color: @flamingo;
-  background-color: @base;
-  border-radius: 10px 0px 0px 10px;
+  color: @yellow;
   padding-left: 10px;
   padding-right: 5px;
   margin-left: 5px;
 }
 
 #idle_inhibitor {
-  color: @flamingo;
-  background-color: @base;
-  border-radius: 0px;
+  color: @yellow;
   padding-left: 5px;
   padding-right: 5px;
   margin-left: 0px;
@@ -100,22 +83,12 @@ tooltip {
 }
 
 #custom-nvidia {
-  color: @flamingo;
-  background-color: @base;
-  border-radius: 0px 10px 10px 0px;
+  color: @yellow;
   padding-left: 5px;
   padding-right: 10px;
   margin-left: 0px;
   margin-right: 4px;
 }
-
-#custom-dunst {
-  color: @yellow;
-  background-color: @base;
-  border-radius: 10px; 
-  margin-left: 5px;
-}
-
 
 /* === Pomo === */
 #custom-pomo.active {
@@ -134,24 +107,17 @@ tooltip {
   margin-left: 4px;
 }
 
-#tray {
-  background-color: @base;
-  border-radius: 10px;
-  margin-right: 4px;
-}
-
-
 /* === Power Group === */
 #group-power {
   color: @red;
-  background-color: @base;
+  background-color: @black;
   border-radius: 10px;
   padding: 0px 10px;
   margin: 3px 15px 3px 5px;
 }
 
 #custom-reboot, #custom-lock, #custom-quit, #custom-suspend, #custom-hibernate {
-    color: @text;
+    color: @white;
     padding-right: 3px;
     padding-left: 5px;
 }
@@ -160,47 +126,14 @@ tooltip {
     padding-right: 7px;
 }
 
-
-/* === Language === */
-#language {
-  color: @text;
-  padding-left: 7px;
-  border-radius: 0 10px 10px 0;
+/* === Clock, Language === */
+#clock, #language {
+  color: @white-bright;
+  padding: 8px 8px;
 }
 
-/* === Clock === */
-#clock {
-  color: @text;
-  padding-left: 7px;
-  border-radius: 0 10px 10px 0;
+/* === System Vitals === */
+#network, #pulseaudio, #battery, #backlight, #tray{
+  color: @white-bright;
+  padding: 8px 8px;
 }
-
-/* === Network === */
-#network {
-  color: @text;
-  padding-left: 7px;
-  border-radius: 0 10px 10px 0;
-}
-
-/* === Pulseaudio === */
-#pulseaudio {
-  color: @text;
-  padding-left: 7px;
-  border-radius: 0 10px 10px 0;
-}
-
-/* === Battery === */
-#battery{
-  color:  @text;
-  border-radius: 0 10px 10px 0;
-  padding-left: 7px;
-  margin: 3px 0px 3px 0px;
-}
-
-/* === Backlight === */
-#backlight{
-  color: @text; 
-  padding-left: 7px;
-  border-radius: 0 10px 10px 0;
-}
-
