@@ -70,11 +70,11 @@ font-manager = ""
 dedup = true
 dedup_inactive_fullscreen = true
 delim = " "
-workspace = "<span color='#bac2de'>{id}</span>:{delim}{clients}"
+workspace = "{id}:{delim}{clients}"
 workspace_empty = "{id}"
 client = "{icon}"
 client_fullscreen = "[{icon}]"
-client_active = "<span color='#f5e0dc'>{icon}</span>"
+client_active = "{icon}"
 client_dup = "{icon}{counter_sup}"
 client_dup_active = "*{icon}*{delim}{icon}{counter_unfocused_sup}"
 client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
