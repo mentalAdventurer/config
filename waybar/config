@@ -14,8 +14,7 @@
         "clock#time",
         "clock#date",
         "custom/notification",
-        "idle_inhibitor",
-        "custom/nvidia"
+        "idle_inhibitor"
     ],
     "modules-right": [
         "tray",
