@@ -106,10 +106,10 @@
         "format-alt": "{icon} {power:.1f}W",
         "format-icons": [
             "<span foreground='#f7768e'></span>",
-            "<span foreground='#f7768e'></span>",
             "<span foreground='#ff9e64'></span>",
             "",
             "",
+            "",
             ""
         ]
     },
