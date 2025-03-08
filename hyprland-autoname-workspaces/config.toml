@@ -62,7 +62,8 @@ font-manager = ""
 
 [exclude]
 "" = "^$"
-"[Ff]irefox" = "Picture-in-Picture"
+"[Ff]irefox" = "[Pp]icture-in-[Pp]icture"
+"[Zz]en" = "[Pp]icture-in-[Pp]icture"
 "[Ss]team" = "^$"
 "(?i)fcitx" = ".*"
 
