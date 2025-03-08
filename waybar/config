@@ -101,8 +101,8 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "<span foreground='#b9f27c'>{icon}</span> {capacity}%",
-        "format-plugged": "<span foreground='#b9f27c'>{icon}</span> {capacity}%",
+        "format-charging": "{icon} <span foreground='#b9f27c'>{capacity}%</span>",
+        "format-plugged": "{icon} <span foreground='#b9f27c'>{capacity}%</span>",
         "format-alt": "{icon} {power:.1f}W",
         "format-icons": [
             "<span foreground='#f7768e'></span>",
