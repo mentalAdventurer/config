@@ -15,7 +15,7 @@ killall wl-paste
 wl-paste --watch cliphist store &
 
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
-pgrep swaync > /dev/null || swaync & 
+pgrep dunst > /dev/null || fnott &
 
 pgrep lxpolkit > /dev/null || 
     lxpolkit & 
