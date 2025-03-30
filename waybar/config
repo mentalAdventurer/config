@@ -49,25 +49,9 @@
         "restart-interval": 1
     },
     "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='#f7768e'></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='#f7768e'></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='#f7768e'></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='#f7768e'></span>",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click-right": "swaync-client -op &",
-        "on-click": "swaync-client -d -sw",
-        "on-click-middle": "swaync-client -C",
-        "escape": false
+        "exec": "~/.config/waybar/scripts/notifications",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
     },
     "custom/pomo": {
         "restart-interval": 1,
