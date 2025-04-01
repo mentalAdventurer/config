@@ -35,5 +35,4 @@ pgrep waybar > /dev/null || waybar &
 pgrep hyprland-autoname-workspaces > /dev/null || hyprland-autoname-workspaces &
 
 # Load Wallpaper
-#pgrep hyprpaper > /dev/null || hyprpaper &
- pgrep swww-daemon > /dev/null || swww-daemon & 
+pgrep hyprpaper > /dev/null || hyprpaper &
