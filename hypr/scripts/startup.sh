@@ -14,7 +14,7 @@ pgrep blueman-applet > /dev/null || blueman-applet &
 killall wl-paste 
 wl-paste --watch cliphist store &
 
-pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
+#pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
 pgrep dunst > /dev/null || fnott &
 
 pgrep -f polkit-kde-authentication-agent-1 > /dev/null ||
