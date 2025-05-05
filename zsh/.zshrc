@@ -1,5 +1,7 @@
 #! /bin/zsh
 # Colors and Prompt
+export ZPLUG_LOG_LOAD_SUCCESS=0
+export ZPLUG_LOG_LOAD_FAILURE=0
 autoload -U colors && colors
 PROMPT=" %{$fg[green]%}% %~ %{$reset_color%}  "
 
