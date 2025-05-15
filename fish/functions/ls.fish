@@ -1,3 +1,3 @@
 function ls
-    exa --color=auto
+    exa --color=auto $argv
 end
