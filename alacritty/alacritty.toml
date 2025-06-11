@@ -73,7 +73,7 @@ text = "#1E1E2E"
 size = 11
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono NF"
 style = "Regular"
 
 [window]
