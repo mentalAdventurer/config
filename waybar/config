@@ -35,7 +35,7 @@
     "hyprland/language": {
         "format": "󰌌 {}",
         "format-de": "de",
-        "format-en": "uk"
+        "format-en": "en"
     },
     "idle_inhibitor": {
         "format": "{icon}",
