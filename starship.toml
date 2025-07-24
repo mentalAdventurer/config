@@ -1,5 +1,13 @@
 add_newline = true
 
+[line_break]
+disabled = false
+
+[git_branch]
+truncation_length = 16
+truncation_symbol = '󰇘'
+ignore_branches = ['master', 'main']
+
 [directory]
 read_only = ''
 home_symbol = ' ~'
