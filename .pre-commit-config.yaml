@@ -1,0 +1,22 @@
+default_install_hook_types: ["pre-commit", "commit-msg", "post-checkout", "post-merge"]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b  # frozen: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        exclude_types: [svg]
+      - id: check-yaml
+        args: ["--unsafe"]
+      - id: check-toml
+      - id: check-xml
+      - id: check-json
+        exclude: .vscode/launch.json
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: detect-private-key
+      - id: check-symlinks
+      - id: destroyed-symlinks
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
