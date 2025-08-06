@@ -252,7 +252,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = rofi -dmenu
+    dmenu = fuzzel -d
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
