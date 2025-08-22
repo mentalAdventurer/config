@@ -3,14 +3,14 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: JetBrainsMono Nerd Font Propo; 
+  font-family: JetBrainsMono Nerd Font Propo;
   font-weight: bold;
   font-size: 14.7px;
 }
 
 window#waybar {
   transition-property: background-color;
-  transition-duration: 0.5s;  
+  transition-duration: 0.5s;
   transition-duration: .5s;
   border-radius: 0px;
   background: @background;
@@ -27,6 +27,7 @@ window#waybar {
 }
 
 #workspaces button {
+  color: @white-bright;
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
@@ -36,7 +37,7 @@ window#waybar {
   padding-left: 4px;
   padding-right: 4px;
   animation: none;
-  transition: none; 
+  transition: none;
 }
 
 #workspaces button.visible {
