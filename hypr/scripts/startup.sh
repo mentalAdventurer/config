@@ -17,9 +17,6 @@ wl-paste --watch cliphist store &
 pgrep batsignal > /dev/null || batsignal -w 25 -c 10 -d 5 &
 pgrep dunst > /dev/null || dunst &
 
-pgrep lxpolkit > /dev/null ||
-    lxpolkit &
-
 pgrep gnome-keyring-d > /dev/null ||
     /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11 &
 
