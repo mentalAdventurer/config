@@ -36,9 +36,6 @@ map <enter> shell
 map x $$f
 map X !$f
 
-# dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -49,6 +46,13 @@ cmd open &{{
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
+}}
+
+map o ${{
+    mime=$(file --mime-type -b $f)
+    handlr=$(grep -Rl "MimeType=.*$mime" /usr/share/applications ~/.local/share/applications /var/lib/flatpak/exports/share/applications/ | xargs -n1 basename | fzf)
+    xdg-mime default $handlr $mime
+    xdg-open $f
 }}
 
 # define a custom 'rename' command without prompt for overwrite
