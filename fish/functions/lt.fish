@@ -1,3 +1,3 @@
 function lt
-    exa --tree --level=3 --icons --git --long --git $argv
+    exa --tree --level=3 --icons --long --git --time-style=relative $argv
 end
