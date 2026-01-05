@@ -82,3 +82,6 @@ opacity = 0.99
 [window.dimensions]
 columns = 145
 lines = 40
+
+[scrolling]
+history = 100000
